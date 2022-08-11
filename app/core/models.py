@@ -1,6 +1,5 @@
 """Database Models"""
 
-from tkinter import CASCADE
 from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import (
@@ -54,7 +53,7 @@ class Recipe(models.Model):
     """Recipe object"""
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=CASCADE
+        on_delete=models.CASCADE
     )
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)

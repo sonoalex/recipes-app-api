@@ -25,4 +25,3 @@ class RecipeModelTests(TestCase):
             description='Sample recipe description'
         )
         self.assertEqual(str(recipe), recipe.title)
-        print('HEllo!')
