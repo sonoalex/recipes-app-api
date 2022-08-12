@@ -5,6 +5,7 @@ from django.contrib.auth import get_user_model
 
 from core import models
 
+
 class RecipeModelTests(TestCase):
     """Test models"""
 

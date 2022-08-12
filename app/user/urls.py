@@ -3,7 +3,7 @@
 from django.urls import path
 from user import views
 
-app_name = 'user' # used by reverse url function
+app_name = 'user'  # used by reverse url function
 
 urlpatterns = [
     path('create/', views.CreateUserView.as_view(), name='create'),

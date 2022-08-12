@@ -1,8 +1,7 @@
 """
 Tests for the user API
 """
-import email
-from os import stat
+
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 from django.urls import reverse
@@ -14,10 +13,12 @@ CREATE_USER_URL = reverse('user:create')
 TOKEN_URL = reverse('user:token')
 ME_URL = reverse('user:me')
 
+
 def create_user(**params):
     """Create and return a new user"""
 
     return get_user_model().objects.create_user(**params)
+
 
 class PublicUserApiTests(TestCase):
     """Test the public features of the user API."""
@@ -95,7 +96,7 @@ class PublicUserApiTests(TestCase):
 
     def test_create_token_bad_credentials(self):
         """Test returns error in credentials invalid"""
-        create_user(email='test@example.com', password = 'goodpass')
+        create_user(email='test@example.com', password='goodpass')
 
         payload = {'email': 'test@example.com', 'password': 'badpass'}
 
@@ -106,9 +107,9 @@ class PublicUserApiTests(TestCase):
 
     def test_create_token_blank_password(self):
         """Test returns error if blank passrod"""
-        #create_user(email='test@example.com', password = 'goodpass')
+        # create_user(email='test@example.com', password = 'goodpass')
 
-        payload = {'email': 'test@example.com','password': ''}
+        payload = {'email': 'test@example.com', 'password': ''}
 
         res = self.client.post(TOKEN_URL, payload)
 

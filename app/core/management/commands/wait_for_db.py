@@ -1,8 +1,9 @@
 
 import time
 from psycopg2 import OperationalError as Psycopg2OpError
-from django.db.utils import OperationalError # Error django throws when db isn't ready
+from django.db.utils import OperationalError
 from django.core.management.base import BaseCommand
+
 
 class Command(BaseCommand):
 
@@ -16,6 +17,7 @@ class Command(BaseCommand):
             try:
                 self.check(databases=['default'])
                 db_up = True
+            # Error(OperationalError) django throws when db isn't ready
             except(Psycopg2OpError, OperationalError):
                 self.stdout.write('Database still unavailable, sleep 1s...')
                 time.sleep(1)
