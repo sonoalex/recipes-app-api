@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken', #is a separate app so we need to import
     'drf_spectacular',
     'user',
+    'recipe'
 ]
 
 MIDDLEWARE = [
