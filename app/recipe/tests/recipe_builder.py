@@ -15,12 +15,11 @@ class RecipeBuilder():
 
     def with_title(self, title: str):
 
-        self.defaults.update({'title': title })
+        self.defaults.update({'title': title})
 
     def with_user(self, user: User):
-        self.defaults.update({'user': user })
+        self.defaults.update({'user': user})
 
     def build(self):
 
         return Recipe.objects.create(**self.defaults)
-

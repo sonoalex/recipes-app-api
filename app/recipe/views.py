@@ -28,8 +28,8 @@ class RecipeViewSet(viewsets.ModelViewSet):
 
         return self.serializer_class
 
-    ## override this method when we want perform something more than create.
+    # override this method when we want perform something more than create.
     # Perfom_create will not be called if create method is overrided
     def perform_create(self, serializer):
-        #tie the user to a recipe
+        # tie the user to a recipe
         serializer.save(user=self.request.user)

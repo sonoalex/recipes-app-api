@@ -15,7 +15,8 @@ class RecipeSerializer(serializers.ModelSerializer):
         read_only_fields = ['id']
 
 
-# We take advantatge of the existing recipe serializer. Just because we want almost the same fields
+# We take advantatge of the existing recipe serializer.
+# Just because we want almost the same fields
 # + description. Thats it.
 class RecipeDetailSerializer(RecipeSerializer):
     """Serializer for recipe detail view"""
