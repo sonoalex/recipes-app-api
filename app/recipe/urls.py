@@ -6,7 +6,7 @@ from recipe import views
 
 from rest_framework.routers import DefaultRouter
 
-
+# Using default router because it gets all related routes from the recipeViewSet
 router = DefaultRouter()
 router.register('recipes', views.RecipeViewSet)
 
